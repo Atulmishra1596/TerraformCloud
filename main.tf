@@ -10,11 +10,7 @@ provider "aws" {
   region = "eu-west-1"
 }
 
-module "ec2module" {
-  source = ".././module/ec2"
+resource "aws_instance" "myec2" {
+   ami = "ami-063d4ab14480ac177"
+   instance_type = "t2.micro"
 }
-
-module "vpcmodule" {
-  source = ".././module/ec2"
-}
-
